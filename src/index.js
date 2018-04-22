@@ -14,8 +14,8 @@ import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 
 
 /* Style Import */
-import 'bootstrap';
-import './styles/app.css';
+import "./styles/bootstrap/bootstrap.scss"
+import './styles/app.scss';
 
 
 
