@@ -4,13 +4,11 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './rootReducer';
 import thunk from 'redux-thunk';
-import { App } from "./components/App";
+import App from "./components/App";
 import Home from "./components/Home";
 /* Import Components */
 
 /* Router import */
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 
 
 /* Style Import */
@@ -33,8 +31,8 @@ const enhancer = composeEnhancers(
 const store = createStore(rootReducer, enhancer);
 
 
-const history = syncHistoryWithStore(browserHistory, store)
-
 ReactDOM.render(
-    <App />
-    ,document.getElementById("nfq"));
+    <Provider store={store}>
+        <App />
+    </Provider>
+    , document.getElementById("nfq"));
